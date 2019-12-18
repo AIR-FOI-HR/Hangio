@@ -1,9 +1,8 @@
 package com.example.db.data.entities
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.ForeignKey
-import androidx.room.PrimaryKey
+import androidx.room.*
+import com.example.db.data.converters.DateConverter
+import java.util.*
 
 @Entity(tableName = "event",foreignKeys = arrayOf(
     ForeignKey(entity = User::class,
@@ -19,14 +18,15 @@ import androidx.room.PrimaryKey
         parentColumns = arrayOf("idevent_category"),
         childColumns = arrayOf("event_category_id"),
         onDelete = ForeignKey.CASCADE)))
+@TypeConverters(DateConverter::class)
 data class Event (
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "idevent")
     var idEvent: Int,
     @ColumnInfo(name = "title")
     var title : String,
-//    @ColumnInfo(name = "start_date")
-//    var startDate : Date,
+    @ColumnInfo(name = "start_date")
+    var startDate : Date,
     @ColumnInfo(name = "address")
     var address : String,
     @ColumnInfo(name = "description")

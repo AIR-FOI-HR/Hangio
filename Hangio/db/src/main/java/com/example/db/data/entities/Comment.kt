@@ -1,10 +1,9 @@
 package com.example.db.data.entities
 
 import android.app.usage.UsageEvents
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.ForeignKey
-import androidx.room.PrimaryKey
+import androidx.room.*
+import com.example.db.data.converters.DateConverter
+import java.util.*
 
 @Entity(tableName = "comment",foreignKeys = arrayOf(
     ForeignKey(entity = UsageEvents.Event::class,
@@ -15,6 +14,7 @@ import androidx.room.PrimaryKey
         parentColumns = arrayOf("iduser"),
         childColumns = arrayOf("user_id"),
         onDelete = ForeignKey.CASCADE)))
+@TypeConverters(DateConverter::class)
 data class Comment (
     @ColumnInfo(name="idcomment",index=true)
     @PrimaryKey(autoGenerate = true)
@@ -24,7 +24,7 @@ data class Comment (
     @ColumnInfo(name= "user_id",index = true)
     var userId : Int,
     @ColumnInfo(name= "text")
-    var text : String
-//    @ColumnInfo(name = "post_time")
-//    var postTime : Time
+    var text : String,
+    @ColumnInfo(name = "post_time")
+    var postTime : Date
 )

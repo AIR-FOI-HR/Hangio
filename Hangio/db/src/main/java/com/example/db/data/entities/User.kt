@@ -1,10 +1,9 @@
 package com.example.db.data.entities
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.ForeignKey
+import androidx.room.*
 import androidx.room.ForeignKey.CASCADE
-import androidx.room.PrimaryKey
+import com.example.db.data.converters.DateConverter
+import java.util.*
 
 @Entity(tableName = "user",
     foreignKeys = arrayOf(
@@ -13,6 +12,7 @@ import androidx.room.PrimaryKey
             childColumns = arrayOf("city_id"),
             onDelete = CASCADE)
     ))
+@TypeConverters(DateConverter::class)
 data class User (
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "iduser")
@@ -25,8 +25,8 @@ data class User (
     var email : String,
     @ColumnInfo(name = "password")
     var password : String,
-//    @ColumnInfo(name = "dob")
-//    var dob : Date?,
+    @ColumnInfo(name = "dob")
+    var dob : Date?,
     @ColumnInfo(name = "photo")
     var photo : String?,
     @ColumnInfo(name = "notifications")

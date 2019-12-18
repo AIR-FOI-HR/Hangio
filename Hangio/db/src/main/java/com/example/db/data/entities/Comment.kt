@@ -6,7 +6,7 @@ import com.example.db.data.converters.DateConverter
 import java.util.*
 
 @Entity(tableName = "comment",foreignKeys = arrayOf(
-    ForeignKey(entity = UsageEvents.Event::class,
+    ForeignKey(entity = Event::class,
         parentColumns = arrayOf("idevent"),
         childColumns = arrayOf("event_id"),
         onDelete = ForeignKey.CASCADE),

@@ -31,5 +31,10 @@ class LoginActivity : AppCompatActivity() {
             val intent=Intent(this, ForgotPasswordActivity::class.java)
             startActivity(intent)
         }
+
+        registracija_btn.setOnClickListener{
+            val intent=Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

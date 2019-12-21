@@ -21,7 +21,7 @@
         <EditText
             android:id="@+id/korime_txt"
             android:layout_width="match_parent"
-            android:hint="Korisničko ime"
+            android:hint="E-mail"
             android:textAlignment="center"
             android:layout_height="wrap_content"/>
         <EditText

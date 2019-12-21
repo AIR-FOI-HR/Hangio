@@ -33,7 +33,8 @@
         <EditText
             android:id="@+id/korime_txt"
             android:layout_width="match_parent"
-            android:hint="Korisničko ime"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"
             android:textAlignment="center"
             android:layout_height="wrap_content"/>
         <EditText
@@ -51,15 +52,10 @@
             android:inputType="textPassword"
             android:layout_height="wrap_content"/>
         <EditText
-            android:id="@+id/email_txt"
-            android:layout_width="match_parent"
-            android:hint="email@email.com"
-            android:textAlignment="center"
-            android:layout_height="wrap_content"/>
-        <EditText
             android:id="@+id/godina_txt"
             android:layout_width="match_parent"
             android:hint="Godina rođenja"
+            android:inputType="number"
             android:textAlignment="center"
             android:layout_height="wrap_content"/>
         <AutoCompleteTextView
@@ -69,6 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <CheckBox
+            android:id="@+id/uvjeti_chb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Prihvaćam uvjete korištenja aplikacije"

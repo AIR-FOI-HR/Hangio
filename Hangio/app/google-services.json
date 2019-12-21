@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "489155287416",
+    "firebase_url": "https://hangio.firebaseio.com",
+    "project_id": "hangio",
+    "storage_bucket": "hangio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489155287416:android:56bd487d3c8d0bafa9108d",
+        "android_client_info": {
+          "package_name": "com.example.hangio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489155287416-a6887hs0htkdi7cm5en6cpbom9a5nmev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNz-zF2e9a34lrVqXx4ULG1EUdfYz-tDg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489155287416-a6887hs0htkdi7cm5en6cpbom9a5nmev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

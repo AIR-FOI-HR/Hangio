@@ -15,4 +15,9 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+
+    <string name="language">Language:</string>
+    <string name="notifications">Notifications:</string>
+    <string name="privacy">PRIVACY POLICY</string>
+    <string name="terms">TERMS AND CONDITIONS</string>
 </resources>

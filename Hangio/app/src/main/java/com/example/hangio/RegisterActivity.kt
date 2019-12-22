@@ -65,9 +65,26 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun updateUserInfoAndUI() {
-        val intent = Intent(this@RegisterActivity, MainActivity::class.java)
+        val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
+    }
+
+    private fun verifyEmail() {
+        val mUser = mAuth!!.currentUser;
+        mUser!!.sendEmailVerification()
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(this@RegisterActivity,
+                        "Verifikacijski mail je poslan na " + mUser.getEmail(),
+                        Toast.LENGTH_SHORT).show()
+                } else {
+                    Log.e(TAG, "sendEmailVerification", task.exception)
+                    Toast.makeText(this@RegisterActivity,
+                        "Verifikacijski mail neuspješno poslan. Pokušajte ponovno.",
+                        Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     private fun napraviNoviRacun(){
@@ -97,7 +114,7 @@ class RegisterActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         Log.d(TAG, "createUserWithEmail:success")
                         val userId = mAuth!!.currentUser!!.uid
-                        //verifyEmail();
+                        verifyEmail();
                         val currentUserDb = mDatabaseReference!!.child(userId)
                         currentUserDb.child("Ime").setValue(ime)
                         currentUserDb.child("Prezime").setValue(prezime)
@@ -106,7 +123,7 @@ class RegisterActivity : AppCompatActivity() {
                         updateUserInfoAndUI()
                     } else {
                         Log.w(TAG, "createUserWithEmail:failure", task.exception)
-                        Toast.makeText(this@RegisterActivity, "Registracija neuspješna. Molimo pokušajte ponovno!.",
+                        Toast.makeText(this@RegisterActivity, "Registracija neuspješna. Molimo pokušajte ponovno!",
                             Toast.LENGTH_SHORT).show()
                     }
                 }

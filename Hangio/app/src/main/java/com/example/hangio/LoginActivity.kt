@@ -63,6 +63,7 @@ class LoginActivity : AppCompatActivity() {
         password = lozinka_txt?.text.toString()
 
         if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
+
             mProgressBar!!.setMessage("Prijava korisnika...")
             mProgressBar!!.show()
             Log.d(TAG, "Prijava korisnika.")

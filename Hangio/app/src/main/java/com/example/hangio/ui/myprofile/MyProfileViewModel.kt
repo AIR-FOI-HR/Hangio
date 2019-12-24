@@ -1,13 +1,13 @@
-package com.example.hangio.ui.home
+package com.example.hangio.ui.myprofile
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class MyProfileViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is HOME Fragment"
+        value = "This is MY PROFILE Fragment"
     }
     val text: LiveData<String> = _text
 }

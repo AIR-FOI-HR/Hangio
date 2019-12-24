@@ -2,25 +2,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-    <item
-        android:id="@+id/nav_profile"
-        android:icon="@drawable/ic_menu_camera"
-        android:title="@string/menu_profile" />
-    <item
-        android:id="@+id/nav_registered"
-        android:icon="@drawable/ic_menu_gallery"
-        android:title="@string/menu_registered" />
-    <item
-        android:id="@+id/nav_created_events"
-        android:icon="@drawable/ic_menu_slideshow"
-        android:title="@string/menu_my_eventss" />
-    <item
-        android:id="@+id/nav_settings"
-        android:icon="@drawable/ic_menu_manage"
-        android:title="@string/menu_settings" />
-    <item
-        android:id="@+id/nav_logout"
-        android:icon="@drawable/ic_menu_manage"
-        android:title="@string/menu_logout" />
 
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@mipmap/ic_home_round"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_my_profile"
+            android:icon="@mipmap/ic_my_profile"
+            android:title="@string/menu_my_profile" />
+        <item
+            android:id="@+id/nav_attending_events"
+            android:icon="@mipmap/ic_attending_events"
+            android:title="@string/menu_attending_events" />
+        <item
+            android:id="@+id/nav_created_events"
+            android:icon="@mipmap/ic_created_events"
+            android:title="@string/menu_created_events" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@mipmap/ic_settings"
+            android:title="@string/menu_settings"/>
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@mipmap/ic_logout"
+            android:title="@string/menu_logout" />
+    </group>
 </menu>

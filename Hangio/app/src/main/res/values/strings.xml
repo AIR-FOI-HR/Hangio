@@ -9,14 +9,15 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_profile">My profile</string>
-    <string name="menu_registered">Registered events</string>
-    <string name="menu_my_eventss">My events</string>
-    <string name="menu_settings">Settings</string>
-    <string name="menu_logout">Logout</string>
-
-    <string name="language">Language:</string>
-    <string name="notifications">Notifications:</string>
-    <string name="privacy">PRIVACY POLICY</string>
-    <string name="terms">TERMS AND CONDITIONS</string>
+    <string name="language">Jezik:</string>
+    <string name="notifications">Obavijesti:</string>
+    <string name="privacy">IZJAVA O PIVATNOSTI</string>
+    <string name="terms">UVJETI KORIŠTENJA</string>
+    
+    <string name="menu_home">Pocetna</string>
+    <string name="menu_my_profile">Moj profil</string>
+    <string name="menu_attending_events">Prijavljeni događaji</string>
+    <string name="menu_created_events">Kreirani događaji</string>
+    <string name="menu_settings">Postavke</string>
+    <string name="menu_logout">Odjava</string>
 </resources>

@@ -20,4 +20,8 @@
     <string name="menu_created_events">Kreirani događaji</string>
     <string name="menu_settings">Postavke</string>
     <string name="menu_logout">Odjava</string>
+
+    <string name="odjava_btn">Odjava</string>
+
+
 </resources>

@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class LogoutViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is LOGOUT Fragment"
+        value = "Kliknite na gumb da bi se odjavili s ovog računa. \nPri novom pokretanju aplikacije morat ćete unijeti email i lozinku."
     }
     val text: LiveData<String> = _text
 }

@@ -11,7 +11,7 @@
 
     <string name="language">Jezik:</string>
     <string name="notifications">Obavijesti:</string>
-    <string name="privacy">IZJAVA O PIVATNOSTI</string>
+    <string name="privacy">IZJAVA O PRIVATNOSTI</string>
     <string name="terms">UVJETI KORIŠTENJA</string>
     
     <string name="menu_home">Pocetna</string>
@@ -21,7 +21,18 @@
     <string name="menu_settings">Postavke</string>
     <string name="menu_logout">Odjava</string>
 
-    <string name="odjava_btn">Odjava</string>
+    <string name="promjena_txt">Promijeni profilnu sliku</string>
+    <string name="osobni_podaci_txt">Osobni podaci</string>
+    <string name="ime_txt">Ime:</string>
+    <string name="prezime_txt">Prezime:</string>
+    <string name="email_txt">E-mail:</string>
+    <string name="datum_rodjenja_txt">Datum rođenja:</string>
+    <string name="lozinka_txt">Lozinka:</string>
+    <string name="nova_lozinka_txt">Nova lozinka:</string>
+    <string name="potvrdi_lozinku_txt">Potvrdi lozinku:</string>
+    <string name="profilna_slika_opis_txt">Profilna slika</string>
+    <string name="nova_lozinka_unos_txt">nova lozinka</string>
+    <string name="izmijeni_podatke_btn">Izmijeni podatke</string>
 
 
 </resources>

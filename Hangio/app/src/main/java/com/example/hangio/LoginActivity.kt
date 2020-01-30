@@ -11,7 +11,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
         prijava_btn.setOnClickListener{
             if(korime_txt.text.toString().equals("admin") && lozinka_txt.text.toString().equals("admin")){
                 var log ="Uspješno ste se prijavili!"

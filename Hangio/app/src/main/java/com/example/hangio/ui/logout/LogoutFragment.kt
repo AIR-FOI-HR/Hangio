@@ -6,13 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import android.content.Intent
-
-
+import com.google.firebase.auth.FirebaseAuth
+import kotlin.system.exitProcess
 
 
 class LogoutFragment : Fragment() {
 
-    private lateinit var logoutViewModel: LogoutViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,12 +19,14 @@ class LogoutFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        FirebaseAuth.getInstance().signOut()
+
         val intent =
             activity!!.baseContext.packageManager.getLaunchIntentForPackage(activity!!.baseContext.packageName)
         intent!!.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
         android.os.Process.killProcess(android.os.Process.myPid())
-        System.exit(0)
+        exitProcess(0)
 
         return null
     }

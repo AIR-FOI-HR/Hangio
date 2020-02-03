@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Hangio</string>
     <string name="title_activity_main">MainActivity</string>
@@ -8,10 +9,30 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Hangio</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
+    <string name="language">Jezik:</string>
+    <string name="notifications">Obavijesti:</string>
+    <string name="privacy">IZJAVA O PRIVATNOSTI</string>
+    <string name="terms">UVJETI KORIŠTENJA</string>
+    
+    <string name="menu_home">Pocetna</string>
+    <string name="menu_my_profile">Moj profil</string>
+    <string name="menu_attending_events">Prijavljeni događaji</string>
+    <string name="menu_created_events">Kreirani događaji</string>
+    <string name="menu_settings">Postavke</string>
+    <string name="menu_logout">Odjava</string>
+
+    <string name="promjena_txt">Promijeni profilnu sliku</string>
+    <string name="osobni_podaci_txt">Osobni podaci</string>
+    <string name="ime_txt">Ime:</string>
+    <string name="prezime_txt">Prezime:</string>
+    <string name="email_txt">E-mail:</string>
+    <string name="datum_rodjenja_txt">Datum rođenja:</string>
+    <string name="lozinka_txt">Lozinka:</string>
+    <string name="nova_lozinka_txt">Nova lozinka:</string>
+    <string name="potvrdi_lozinku_txt">Potvrdi lozinku:</string>
+    <string name="profilna_slika_opis_txt">Profilna slika</string>
+    <string name="nova_lozinka_unos_txt">nova lozinka</string>
+    <string name="izmijeni_podatke_btn">Izmijeni podatke</string>
+
+
 </resources>

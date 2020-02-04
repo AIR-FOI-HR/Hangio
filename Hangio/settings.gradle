@@ -1,2 +1,2 @@
-include ':app', ':db'
+include ':app', ':db', ':ws'
 rootProject.name='Hangio'

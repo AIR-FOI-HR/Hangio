@@ -34,5 +34,7 @@
     <string name="nova_lozinka_unos_txt">nova lozinka</string>
     <string name="izmijeni_podatke_btn">Izmijeni podatke</string>
 
+    <string name="selected_item">Selected item:</string>
+
 
 </resources>

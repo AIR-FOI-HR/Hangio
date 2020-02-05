@@ -17,5 +17,9 @@ class CreateEvent : AppCompatActivity() {
         objavi_btn.setOnClickListener{
             Toast.makeText(this, "Uspješno odabran gumb objavi", Toast.LENGTH_SHORT).show()
         }
+
+        odustni_btn.setOnClickListener {
+            finish()
+        }
     }
 }

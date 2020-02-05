@@ -48,7 +48,13 @@ class HomeFragment : Fragment(),EventAdapter.OnItemSelected {
         recycler.adapter = adapter
     }
 
-    override fun selectedItem(event: Event) {
-        Toast.makeText(requireContext(),event.title,Toast.LENGTH_SHORT).show()
+    override fun selectedAttend(event: com.example.db.data.entities.Event) {
+        Toast.makeText(requireContext(),"Korisnik hoce prijaviti dogadaj",Toast.LENGTH_SHORT).show()
     }
+
+    override fun selectedInfo(event: com.example.db.data.entities.Event) {
+        Toast.makeText(requireContext(),"Korisnik hoce informacije",Toast.LENGTH_SHORT).show()
+    }
+
+
 }

@@ -35,10 +35,14 @@ abstract class AppDatabase : RoomDatabase() {
             instance ?: buildDatabase(context).also { instance = it }
         }
 
+        public fun getInstance(): AppDatabase? {
+            return instance
+        }
+
         private fun buildDatabase(context: Context) = Room.databaseBuilder(
             context,
             AppDatabase::class.java, "dbHangio.db"
-        )
+        ).allowMainThreadQueries()
             .build()
     }
 }

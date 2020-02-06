@@ -2,9 +2,10 @@ package com.example.db.data.entities
 
 import androidx.room.*
 import com.example.db.data.converters.DateConverter
+import java.io.Serializable
 import java.util.*
 
-@Entity(tableName = "event",foreignKeys = arrayOf(
+@Entity(tableName = "event"/*,foreignKeys = arrayOf(
     ForeignKey(entity = User::class,
         parentColumns = arrayOf("iduser"),
         childColumns = arrayOf("creator_id"),
@@ -17,7 +18,7 @@ import java.util.*
     ForeignKey(entity = EventCategory::class,
         parentColumns = arrayOf("idevent_category"),
         childColumns = arrayOf("event_category_id"),
-        onDelete = ForeignKey.CASCADE)))
+        onDelete = ForeignKey.CASCADE))*/)
 @TypeConverters(DateConverter::class)
 data class Event (
     @PrimaryKey(autoGenerate = true)
@@ -41,4 +42,4 @@ data class Event (
     var cityId : Int,
     @ColumnInfo(name="event_category_id", index = true)
     var eventCategoryId : Int
-)
+) : Serializable

@@ -32,39 +32,39 @@ class HomeViewModel : ViewModel() {
         android.os.Handler().post {
             var allEvents = db!!.EventDAO().getAllEvents()
 
-            if (allEvents.isEmpty() /* || oldData...*/) {
-                webServiceProvider.getEvents(object : ResponseHandler {
-                    override fun onData(data: Any) {
-                        var formatter = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+            webServiceProvider.getEvents(object : ResponseHandler {
+                override fun onData(data: Any) {
+                    var formatter = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
 
-                        val newData = LinkedList<Event>()
-                        for (event in data as List<com.example.ws.Event>) {
-                            val entity = Event(
-                                event.idevent,
-                                event.title,
-                                formatter.parse(event.start_date),
-                                event.address,
-                                event.description,
-                                event.capacity,
-                                event.registered,
-                                event.creator_id,
-                                event.city_id,
-                                event.event_category_id
-                            )
-                            db.EventDAO().insertEvent(entity)
-                            newData.add(entity)
-                        }
-
-                        value = newData
-                        Log.i("HomeViewModel", "From WS")
+                    val newData = LinkedList<Event>()
+                    for (event in data as List<com.example.ws.Event>) {
+                        val entity = Event(
+                            event.idevent,
+                            event.title,
+                            formatter.parse(event.start_date),
+                            event.address,
+                            event.description,
+                            event.capacity,
+                            event.registered,
+                            event.creator_id,
+                            event.city_id,
+                            event.event_category_id
+                        )
+                        db.EventDAO().insertEvent(entity)
+                        newData.add(entity)
                     }
-                })
-            } else {
-                value = allEvents
-                Log.i("HomeViewModel", "From DB")
-            }
+
+
+                    if(allEvents != newData) {
+                        value = newData
+                    }
+                    else{
+                        value = allEvents
+                    }
+                    Log.i("HomeViewModel", "From WS")
+                }
+            })
         }
     }
-
     val events = _events
 }

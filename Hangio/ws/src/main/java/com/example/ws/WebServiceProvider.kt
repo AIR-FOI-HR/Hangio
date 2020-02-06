@@ -1,5 +1,6 @@
 package com.example.ws
 
+import android.util.Log
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,6 +21,24 @@ public class WebServiceProvider {
 
         provider = retrofit.create(DataProvider::class.java)
     }
+
+    fun createEvent(event: Event) {
+
+      val call = provider.addEvent(event)
+
+        call.enqueue(object:Callback<Event>{
+            override fun onFailure(call: Call<Event>, t: Throwable) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onResponse(call: Call<Event>, response: Response<Event>) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+        })
+        }
+
+
+
 
     fun getEvents(responseHandler: ResponseHandler){
         val call = provider.getEvents()

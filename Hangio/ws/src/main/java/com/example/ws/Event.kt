@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class Event(
-    @SerializedName("idevent") var idevent: Int,
+    @SerializedName("idevent") var idevent: Int=0,
     @SerializedName("title") var title: String,
     @SerializedName("start_date") var start_date: String,
     @SerializedName("address") var address: String,

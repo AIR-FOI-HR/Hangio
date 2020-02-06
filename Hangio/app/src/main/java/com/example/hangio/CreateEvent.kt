@@ -32,8 +32,19 @@ class CreateEvent : AppCompatActivity() {
             var inputDatum = findViewById(R.id.input_datum) as EditText
          //   var inputVrijeme = findViewById(R.id.input_vrijeme) as EditText
             var inputOpis = findViewById(R.id.input_opis) as EditText
+            var inputCategory:Spinner = findViewById(R.id.spinner_kategorija) as Spinner
+
             Toast.makeText(this, inputNaziv.text, Toast.LENGTH_SHORT).show()
-            val event = Event(0,inputNaziv.text.toString(),inputDatum.text.toString(),inputAdresa.text.toString(),inputOpis.text.toString(),1,1,1,1,1)
+            val event = Event(0,
+                inputNaziv.text.toString(),
+                inputDatum.text.toString(),
+                inputAdresa.text.toString(),
+                inputOpis.text.toString(),
+                1,
+                1,
+                1,
+                1,
+                inputCategory.selectedItemPosition+1)
 
 
 
@@ -49,7 +60,7 @@ class CreateEvent : AppCompatActivity() {
         val eventCategories = arrayOf<String>("Sport", "Movies", "Coffee/Drink","Concert", "Night out", "Walk",
             "Casual hanging out", "House party", "Theatre play", "Museum visit", "Other")
 
-        val spinner = findViewById(R.id.eventCategoriesSpinner) as Spinner
+        val spinner = findViewById(R.id.spinner_kategorija) as Spinner
 
         if (spinner != null) {
             val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, eventCategories)

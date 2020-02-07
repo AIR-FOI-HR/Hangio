@@ -1,6 +1,7 @@
 package com.example.hangio
 
 import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -112,6 +113,21 @@ class CreateEvent : AppCompatActivity() {
                 now.get(Calendar.YEAR), now.get(Calendar.MONTH), now.get(Calendar.DAY_OF_MONTH))
             datePicker.show()
         }
-
+        vrijeme_btn.setOnClickListener {
+            val now = Calendar.getInstance()
+            val timePicker = TimePickerDialog(
+                this, TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                    val selectedTime = Calendar.getInstance()
+                    selectedTime.set(Calendar.HOUR_OF_DAY, hourOfDay)
+                    selectedTime.set(Calendar.MINUTE, minute)
+                    val time= timeFormat.format(selectedTime.time)
+                    val sb = StringBuilder()
+                    sb.append(input_datum.text).append(" ").append(time)
+                    input_datum.setText(sb.toString())
+                },
+                now.get(Calendar.HOUR_OF_DAY), now.get(Calendar.MINUTE), false
+            )
+            timePicker.show()
+        }
     }
 }

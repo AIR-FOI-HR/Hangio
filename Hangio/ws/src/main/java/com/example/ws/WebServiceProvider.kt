@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 public class WebServiceProvider {
 
     companion object{
-        private const val BASE_URL = "http://10.24.33.5/php_rest_hangio/event/"
+        private const val BASE_URL = "http://10.24.30.100/php_rest_hangio/event/"
     }
 
     private val provider: DataProvider

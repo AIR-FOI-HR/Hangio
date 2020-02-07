@@ -1,6 +1,11 @@
 package com.example.hangio
 
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import androidx.navigation.findNavController
@@ -13,6 +18,7 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import androidx.core.app.NotificationCompat
 import com.example.db.data.AppDatabase
 
 class MainActivity : AppCompatActivity() {
@@ -47,7 +53,40 @@ class MainActivity : AppCompatActivity() {
 
         AppDatabase.invoke(this)
 
+        //Kreiranje notifikacije
+        createNotificationChannel()
+
+        with(getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager) {
+            // notifikacijski id mora biti jedinstven za svaku notifikaciju
+            notify(1234, createNotification("Hangio", "Dobrodošli u Hangio aplikaciju"))
+        }
+
     }
+
+    private fun createNotification(title: String, body: String): Notification {
+        return NotificationCompat.Builder(this, "APP")
+            .setContentTitle(title)
+            .setContentText(body)
+            .setSmallIcon(android.R.drawable.arrow_down_float).build()
+    }
+
+    private fun createNotificationChannel() {
+        // Kreira se  Notifikacijski kanal, ali samo na API 26+ verzijama
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name = "APP_CHANNEL"
+            val descriptionText = "desc"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel("APP", name, importance).apply {
+                description = descriptionText
+            }
+            // Registracija kanala sa sustavom
+            val notificationManager: NotificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
+    }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -1,5 +1,6 @@
 package com.example.hangio
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,8 +16,13 @@ import com.example.ws.Event
 import com.example.ws.ResponseHandler
 import com.example.ws.WebServiceProvider
 import kotlinx.android.synthetic.main.activity_kreiraj_dogadaj.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class CreateEvent : AppCompatActivity() {
+
+    var format = SimpleDateFormat("YYYY-MM-dd")
+    var timeFormat = SimpleDateFormat("hh:mm:ss")
 
     private val webServiceProvider = WebServiceProvider()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,15 +33,16 @@ class CreateEvent : AppCompatActivity() {
             Toast.makeText(this, "Uspješno odabran gumb objavi", Toast.LENGTH_SHORT).show()
 
             var inputNaziv = findViewById(R.id.input_naziv) as EditText
-        //    var inputGrad = findViewById(R.id.input_grad) as EditText
+            //    var inputGrad = findViewById(R.id.input_grad) as EditText
             var inputAdresa = findViewById(R.id.input_adresa) as EditText
             var inputDatum = findViewById(R.id.input_datum) as EditText
-         //   var inputVrijeme = findViewById(R.id.input_vrijeme) as EditText
+            //   var inputVrijeme = findViewById(R.id.input_vrijeme) as EditText
             var inputOpis = findViewById(R.id.input_opis) as EditText
-            var inputCategory:Spinner = findViewById(R.id.spinner_kategorija) as Spinner
+            var inputCategory: Spinner = findViewById(R.id.spinner_kategorija) as Spinner
 
             Toast.makeText(this, inputNaziv.text, Toast.LENGTH_SHORT).show()
-            val event = Event(0,
+            val event = Event(
+                0,
                 inputNaziv.text.toString(),
                 inputDatum.text.toString(),
                 inputAdresa.text.toString(),
@@ -44,7 +51,8 @@ class CreateEvent : AppCompatActivity() {
                 1,
                 1,
                 1,
-                inputCategory.selectedItemPosition+1)
+                inputCategory.selectedItemPosition + 1
+            )
 
 
 
@@ -57,18 +65,30 @@ class CreateEvent : AppCompatActivity() {
             finish()
         }
 
-        val eventCategories = arrayOf<String>("Sport", "Movies", "Coffee/Drink","Concert", "Night out", "Walk",
-            "Casual hanging out", "House party", "Theatre play", "Museum visit", "Other")
+        val eventCategories = arrayOf<String>(
+            "Sport", "Movies", "Coffee/Drink", "Concert", "Night out", "Walk",
+            "Casual hanging out", "House party", "Theatre play", "Museum visit", "Other"
+        )
 
         val spinner = findViewById(R.id.spinner_kategorija) as Spinner
 
         if (spinner != null) {
-            val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, eventCategories)
+            val arrayAdapter =
+                ArrayAdapter(this, android.R.layout.simple_spinner_item, eventCategories)
             spinner.adapter = arrayAdapter
 
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                    Toast.makeText(this@CreateEvent, getString(R.string.selected_item) + " " + eventCategories[position], Toast.LENGTH_SHORT).show()
+                override fun onItemSelected(
+                    parent: AdapterView<*>,
+                    view: View,
+                    position: Int,
+                    id: Long
+                ) {
+                    Toast.makeText(
+                        this@CreateEvent,
+                        getString(R.string.selected_item) + " " + eventCategories[position],
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
@@ -76,5 +96,22 @@ class CreateEvent : AppCompatActivity() {
                 }
             }
         }
+
+        //Kalendar
+
+        input_datum.setOnClickListener {
+            val now = Calendar.getInstance()
+            val datePicker = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+                val selectedDate = Calendar.getInstance()
+                selectedDate.set(Calendar.YEAR,year)
+                selectedDate.set(Calendar.MONTH,month)
+                selectedDate.set(Calendar.DAY_OF_MONTH,dayOfMonth)
+                val date = format.format(selectedDate.time)
+                input_datum.setText(date)
+            },
+                now.get(Calendar.YEAR), now.get(Calendar.MONTH), now.get(Calendar.DAY_OF_MONTH))
+            datePicker.show()
+        }
+
     }
 }

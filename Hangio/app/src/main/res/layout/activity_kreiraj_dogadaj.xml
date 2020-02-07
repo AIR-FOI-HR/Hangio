@@ -7,159 +7,90 @@
     android:orientation="vertical"
     tools:context=".CreateEvent">
 
-    <LinearLayout
+    <EditText
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="150dp"
+        android:hint="Naziv"
+        android:id="@+id/input_naziv"
+        android:gravity="start"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="20dp"
-        android:paddingRight="150dp">
-
-
-        <EditText
-            android:hint="Naziv"
-            android:id="@+id/input_naziv"
-            android:gravity="start"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingLeft="20dp"
-        android:paddingRight="130dp">
+        android:paddingLeft="15dp"
+        android:paddingRight="70dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="28dp"
+            android:textSize="20dp"
             android:text="Kategorija: " />
 
         <Spinner
             android:id="@+id/spinner_kategorija"
-            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.863"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
-    <LinearLayout
+    <EditText
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="150dp"
+        android:hint="Grad"
+        android:id="@+id/input_grad"
+        android:gravity="start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="150dp"
+        android:hint="Adresa"
+        android:id="@+id/input_adresa"
+        android:gravity="start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="150dp"
+        android:hint="Datum događaja"
+        android:id="@+id/input_datum"
+        android:gravity="start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="150dp"
+        android:hint="Broj osoba"
+        android:id="@+id/input_broj_osoba"
+        android:gravity="start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="150dp"
+        android:id="@+id/opis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="20dp"
-        android:paddingRight="150dp">
+        android:gravity="start"
+        android:text="Opis događaja"
+        android:textSize="18dp"/>
 
-        <EditText
-            android:hint="Grad"
-            android:id="@+id/input_grad"
-            android:gravity="start"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
+    <EditText
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="150dp"
+        android:hint="Ovjdje unesi opis događaja"
+        android:id="@+id/input_opis"
+        android:gravity="start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="20dp"
-        android:paddingRight="150dp">
-
-        <EditText
-            android:hint="Adresa"
-            android:id="@+id/input_adresa"
-            android:gravity="start"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="20dp"
-        android:paddingRight="150dp">
-
-        <EditText
-            android:hint="Datum događaja"
-            android:id="@+id/input_datum"
-            android:gravity="start"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="20dp"
-        android:paddingRight="150dp">
-
-        <EditText
-            android:hint="Vrijeme događaja"
-            android:id="@+id/input_vrijeme"
-            android:gravity="start"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="5dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="150dp">
-
-        <TextView
-            android:text="Broj osoba: "
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"/>
-
-        <Spinner
-            android:id="@+id/spinner_broj_osoba"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.863"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="50dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="150dp">
-
-        <TextView
-            android:id="@+id/opis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="start"
-            android:text="Opis događaja"
-            android:textSize="18dp"/>
-
-        <EditText
-            android:hint="Ovjdje unesi opis događaja"
-            android:id="@+id/input_opis"
-            android:gravity="start"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="100dp"/>
-    </LinearLayout>
+        android:paddingTop="5dp"/>
 
     <Button
         android:layout_gravity="center_horizontal"
